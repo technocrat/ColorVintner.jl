@@ -10,7 +10,7 @@ A Julia package for exploring and visualizing ColorBrewer color schemes using Ma
 - **Export Capabilities**: Save plots as PDF files for publication
 - **Organized Display**: Split large scheme collections into manageable parts
 
-## Installation
+## Installation (2025-06-27—registration pending)
 
 ```julia
 using Pkg
