@@ -6,7 +6,7 @@ makedocs(
     sitename = "ColorVintner",
     format = Documenter.HTML(
         prettyurls = false,
-        canonical = false
+        canonical = nothing
     ),
     modules = [ColorVintner],
     pages = [

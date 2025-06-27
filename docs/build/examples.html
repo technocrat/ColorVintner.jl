@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Examples · ColorVintner</title><meta name="title" content="Examples · ColorVintner"/><meta property="og:title" content="Examples · ColorVintner"/><meta property="twitter:title" content="Examples · ColorVintner"/><meta name="description" content="Documentation for ColorVintner."/><meta property="og:description" content="Documentation for ColorVintner."/><meta property="twitter:description" content="Documentation for ColorVintner."/><script data-outdated-warner src="assets/warner.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/lato-font/3.0.0/css/lato-font.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/juliamono/0.050/juliamono.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/fontawesome.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/solid.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.8/katex.min.css" rel="stylesheet" type="text/css"/><script>documenterBaseURL="."</script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" data-main="assets/documenter.js"></script><script src="search_index.js"></script><script src="siteinfo.js"></script><script src="../versions.js"></script><link class="docs-theme-link" rel="stylesheet" type="text/css" href="assets/themes/catppuccin-mocha.css" data-theme-name="catppuccin-mocha"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="assets/themes/catppuccin-macchiato.css" data-theme-name="catppuccin-macchiato"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="assets/themes/catppuccin-frappe.css" data-theme-name="catppuccin-frappe"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="assets/themes/catppuccin-latte.css" data-theme-name="catppuccin-latte"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="assets/themes/documenter-dark.css" data-theme-name="documenter-dark" data-theme-primary-dark/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="assets/themes/documenter-light.css" data-theme-name="documenter-light" data-theme-primary/><script src="assets/themeswap.js"></script></head><body><div id="documenter"><nav class="docs-sidebar"><div class="docs-package-name"><span class="docs-autofit"><a href="index.html">ColorVintner</a></span></div><button class="docs-search-query input is-rounded is-small is-clickable my-2 mx-auto py-1 px-2" id="documenter-search-query">Search docs (Ctrl + /)</button><ul class="docs-menu"><li><a class="tocitem" href="index.html">Home</a></li><li><a class="tocitem" href="getting_started.html">Getting Started</a></li><li><a class="tocitem" href="api.html">API Reference</a></li><li class="is-active"><a class="tocitem" href="examples.html">Examples</a><ul class="internal"><li><a class="tocitem" href="#Basic-Exploration"><span>Basic Exploration</span></a></li><li><a class="tocitem" href="#Basic-Plotting"><span>Basic Plotting</span></a></li><li><a class="tocitem" href="#Comprehensive-Visualization"><span>Comprehensive Visualization</span></a></li><li><a class="tocitem" href="#Working-with-Scheme-Categories"><span>Working with Scheme Categories</span></a></li><li><a class="tocitem" href="#Utility-Examples"><span>Utility Examples</span></a></li><li><a class="tocitem" href="#Advanced-Examples"><span>Advanced Examples</span></a></li></ul></li></ul><div class="docs-version-selector field has-addons"><div class="control"><span class="docs-label button is-static is-size-7">Version</span></div><div class="docs-selector control is-expanded"><div class="select is-fullwidth is-size-7"><select id="documenter-version-selector"></select></div></div></div></nav><div class="docs-main"><header class="docs-navbar"><a class="docs-sidebar-button docs-navbar-link fa-solid fa-bars is-hidden-desktop" id="documenter-sidebar-button" href="#"></a><nav class="breadcrumb"><ul class="is-hidden-mobile"><li class="is-active"><a href="examples.html">Examples</a></li></ul><ul class="is-hidden-tablet"><li class="is-active"><a href="examples.html">Examples</a></li></ul></nav><div class="docs-right"><a class="docs-navbar-link" href="https://github.com/technocrat/ColorVintner.jl" title="View the repository on GitHub"><span class="docs-icon fa-brands"></span><span class="docs-label is-hidden-touch">GitHub</span></a><a class="docs-navbar-link" href="https://github.com/technocrat/ColorVintner.jl/blob/main/docs/src/examples.md" title="Edit source on GitHub"><span class="docs-icon fa-solid"></span></a><a class="docs-settings-button docs-navbar-link fa-solid fa-gear" id="documenter-settings-button" href="#" title="Settings"></a><a class="docs-article-toggle-button fa-solid fa-chevron-up" id="documenter-article-toggle-button" href="javascript:;" title="Collapse all docstrings"></a></div></header><article class="content" id="documenter-page"><h1 id="Examples"><a class="docs-heading-anchor" href="#Examples">Examples</a><a id="Examples-1"></a><a class="docs-heading-anchor-permalink" href="#Examples" title="Permalink"></a></h1><p>This page provides practical examples of how to use ColorVintner.</p><h2 id="Basic-Exploration"><a class="docs-heading-anchor" href="#Basic-Exploration">Basic Exploration</a><a id="Basic-Exploration-1"></a><a class="docs-heading-anchor-permalink" href="#Basic-Exploration" title="Permalink"></a></h2><h3 id="List-All-Available-Schemes"><a class="docs-heading-anchor" href="#List-All-Available-Schemes">List All Available Schemes</a><a id="List-All-Available-Schemes-1"></a><a class="docs-heading-anchor-permalink" href="#List-All-Available-Schemes" title="Permalink"></a></h3><pre><code class="language-julia hljs">using ColorVintner
+
+# Print all scheme names to console
+show_all_scheme_names()</code></pre><h3 id="Examine-a-Specific-Scheme"><a class="docs-heading-anchor" href="#Examine-a-Specific-Scheme">Examine a Specific Scheme</a><a id="Examine-a-Specific-Scheme-1"></a><a class="docs-heading-anchor-permalink" href="#Examine-a-Specific-Scheme" title="Permalink"></a></h3><pre><code class="language-julia hljs"># Get detailed information about Blues_5
+colors = list_scheme_colors_in_rbg(:Blues_5)</code></pre><p>Output:</p><pre><code class="nohighlight hljs">Scheme: Blues_5
+Number of colors: 5
+Colors: [&quot;#EFF3FF&quot;, &quot;#C6DBEF&quot;, &quot;#9ECAE1&quot;, &quot;#6BAED6&quot;, &quot;#3182BD&quot;]</code></pre><h3 id="Get-All-Schemes-as-DataFrame"><a class="docs-heading-anchor" href="#Get-All-Schemes-as-DataFrame">Get All Schemes as DataFrame</a><a id="Get-All-Schemes-as-DataFrame-1"></a><a class="docs-heading-anchor-permalink" href="#Get-All-Schemes-as-DataFrame" title="Permalink"></a></h3><pre><code class="language-julia hljs"># Create DataFrame with all schemes
+df = list_schemes_colors_in_hex()
+
+# Show first few rows
+first(df, 5)</code></pre><h2 id="Basic-Plotting"><a class="docs-heading-anchor" href="#Basic-Plotting">Basic Plotting</a><a id="Basic-Plotting-1"></a><a class="docs-heading-anchor-permalink" href="#Basic-Plotting" title="Permalink"></a></h2><h3 id="Simple-Color-Bar-Plot"><a class="docs-heading-anchor" href="#Simple-Color-Bar-Plot">Simple Color Bar Plot</a><a id="Simple-Color-Bar-Plot-1"></a><a class="docs-heading-anchor-permalink" href="#Simple-Color-Bar-Plot" title="Permalink"></a></h3><pre><code class="language-julia hljs"># Plot a few schemes
+plot_color_bars([:Blues_5, :Reds_5, :Greens_5])</code></pre><h3 id="Custom-Plot-Layout"><a class="docs-heading-anchor" href="#Custom-Plot-Layout">Custom Plot Layout</a><a id="Custom-Plot-Layout-1"></a><a class="docs-heading-anchor-permalink" href="#Custom-Plot-Layout" title="Permalink"></a></h3><pre><code class="language-julia hljs"># Plot with custom settings
+plot_color_bars([:Blues_5, :Reds_5, :Greens_5, :Oranges_5], 
+                schemes_per_row=2,
+                figsize=(1200, 800),
+                plot_title=&quot;My Favorite Schemes&quot;)</code></pre><h3 id="Save-Plot-to-File"><a class="docs-heading-anchor" href="#Save-Plot-to-File">Save Plot to File</a><a id="Save-Plot-to-File-1"></a><a class="docs-heading-anchor-permalink" href="#Save-Plot-to-File" title="Permalink"></a></h3><pre><code class="language-julia hljs"># Save plot as PDF
+plot_color_bars([:Blues_5, :Reds_5, :Greens_5], 
+                save_path=&quot;my_color_schemes.pdf&quot;,
+                plot_title=&quot;Saved Color Schemes&quot;)</code></pre><h2 id="Comprehensive-Visualization"><a class="docs-heading-anchor" href="#Comprehensive-Visualization">Comprehensive Visualization</a><a id="Comprehensive-Visualization-1"></a><a class="docs-heading-anchor-permalink" href="#Comprehensive-Visualization" title="Permalink"></a></h2><h3 id="All-Categories-at-Once"><a class="docs-heading-anchor" href="#All-Categories-at-Once">All Categories at Once</a><a id="All-Categories-at-Once-1"></a><a class="docs-heading-anchor-permalink" href="#All-Categories-at-Once" title="Permalink"></a></h3><pre><code class="language-julia hljs"># Create plots for all categories
+plots = plot_schemes_by_category()
+
+# This creates:
+# - 4 sequential scheme plots (parts 1-4)
+# - 3 diverging scheme plots (parts 1-3)  
+# - 2 qualitative scheme plots (parts 1-2)</code></pre><h3 id="Save-All-Plots-to-Directory"><a class="docs-heading-anchor" href="#Save-All-Plots-to-Directory">Save All Plots to Directory</a><a id="Save-All-Plots-to-Directory-1"></a><a class="docs-heading-anchor-permalink" href="#Save-All-Plots-to-Directory" title="Permalink"></a></h3><pre><code class="language-julia hljs"># Create directory and save all plots
+plots = plot_schemes_by_category(save_dir=&quot;./color_plots&quot;)</code></pre><h3 id="Individual-Category-Plots"><a class="docs-heading-anchor" href="#Individual-Category-Plots">Individual Category Plots</a><a id="Individual-Category-Plots-1"></a><a class="docs-heading-anchor-permalink" href="#Individual-Category-Plots" title="Permalink"></a></h3><pre><code class="language-julia hljs"># Just sequential schemes
+seq_plots = plot_sequential_schemes_split()
+
+# Just diverging schemes  
+div_plots = plot_diverging_schemes_split()
+
+# Just qualitative schemes
+qual_plots = plot_qualitative_schemes_split()</code></pre><h2 id="Working-with-Scheme-Categories"><a class="docs-heading-anchor" href="#Working-with-Scheme-Categories">Working with Scheme Categories</a><a id="Working-with-Scheme-Categories-1"></a><a class="docs-heading-anchor-permalink" href="#Working-with-Scheme-Categories" title="Permalink"></a></h2><h3 id="Sequential-Schemes"><a class="docs-heading-anchor" href="#Sequential-Schemes">Sequential Schemes</a><a id="Sequential-Schemes-1"></a><a class="docs-heading-anchor-permalink" href="#Sequential-Schemes" title="Permalink"></a></h3><pre><code class="language-julia hljs"># Plot first 8 sequential schemes
+plot_color_bars(sequential[1:8], 
+                schemes_per_row=4,
+                plot_title=&quot;Sequential Schemes (First 8)&quot;)
+
+# Plot all Blues variants
+blues_schemes = filter(x -&gt; startswith(string(x), &quot;Blues&quot;), sequential)
+plot_color_bars(blues_schemes, 
+                plot_title=&quot;All Blues Schemes&quot;)</code></pre><h3 id="Diverging-Schemes"><a class="docs-heading-anchor" href="#Diverging-Schemes">Diverging Schemes</a><a id="Diverging-Schemes-1"></a><a class="docs-heading-anchor-permalink" href="#Diverging-Schemes" title="Permalink"></a></h3><pre><code class="language-julia hljs"># Plot first 6 diverging schemes
+plot_color_bars(diverging[1:6], 
+                schemes_per_row=3,
+                plot_title=&quot;Diverging Schemes (First 6)&quot;)
+
+# Plot all RdBu variants
+rdbu_schemes = filter(x -&gt; startswith(string(x), &quot;RdBu&quot;), diverging)
+plot_color_bars(rdbu_schemes, 
+                plot_title=&quot;All RdBu Schemes&quot;)</code></pre><h3 id="Qualitative-Schemes"><a class="docs-heading-anchor" href="#Qualitative-Schemes">Qualitative Schemes</a><a id="Qualitative-Schemes-1"></a><a class="docs-heading-anchor-permalink" href="#Qualitative-Schemes" title="Permalink"></a></h3><pre><code class="language-julia hljs"># Plot first 8 qualitative schemes
+plot_color_bars(qualitative[1:8], 
+                schemes_per_row=4,
+                plot_title=&quot;Qualitative Schemes (First 8)&quot;)
+
+# Plot all Set1 variants
+set1_schemes = filter(x -&gt; startswith(string(x), &quot;Set1&quot;), qualitative)
+plot_color_bars(set1_schemes, 
+                plot_title=&quot;All Set1 Schemes&quot;)</code></pre><h2 id="Utility-Examples"><a class="docs-heading-anchor" href="#Utility-Examples">Utility Examples</a><a id="Utility-Examples-1"></a><a class="docs-heading-anchor-permalink" href="#Utility-Examples" title="Permalink"></a></h2><h3 id="Get-Scheme-Statistics"><a class="docs-heading-anchor" href="#Get-Scheme-Statistics">Get Scheme Statistics</a><a id="Get-Scheme-Statistics-1"></a><a class="docs-heading-anchor-permalink" href="#Get-Scheme-Statistics" title="Permalink"></a></h3><pre><code class="language-julia hljs"># Get counts for each category
+counts = get_scheme_count()
+println(&quot;Total schemes: &quot;, counts[:total])
+println(&quot;Sequential: &quot;, counts[:sequential])
+println(&quot;Diverging: &quot;, counts[:diverging])
+println(&quot;Qualitative: &quot;, counts[:qualitative])</code></pre><h3 id="Combine-All-Schemes"><a class="docs-heading-anchor" href="#Combine-All-Schemes">Combine All Schemes</a><a id="Combine-All-Schemes-1"></a><a class="docs-heading-anchor-permalink" href="#Combine-All-Schemes" title="Permalink"></a></h3><pre><code class="language-julia hljs"># Get all schemes in one vector
+all_schemes = get_all_schemes()
+println(&quot;Total schemes available: &quot;, length(all_schemes))
+
+# Plot a random selection
+using Random
+Random.seed!(42)  # For reproducible results
+random_schemes = rand(all_schemes, 12)
+plot_color_bars(random_schemes, 
+                schemes_per_row=4,
+                plot_title=&quot;Random Color Schemes&quot;)</code></pre><h3 id="Distribution-Information"><a class="docs-heading-anchor" href="#Distribution-Information">Distribution Information</a><a id="Distribution-Information-1"></a><a class="docs-heading-anchor-permalink" href="#Distribution-Information" title="Permalink"></a></h3><pre><code class="language-julia hljs"># See how schemes are distributed across plot parts
+show_sequential_distribution()
+show_diverging_distribution()
+show_qualitative_distribution()</code></pre><h2 id="Advanced-Examples"><a class="docs-heading-anchor" href="#Advanced-Examples">Advanced Examples</a><a id="Advanced-Examples-1"></a><a class="docs-heading-anchor-permalink" href="#Advanced-Examples" title="Permalink"></a></h2><h3 id="Custom-Color-Scheme-Selection"><a class="docs-heading-anchor" href="#Custom-Color-Scheme-Selection">Custom Color Scheme Selection</a><a id="Custom-Color-Scheme-Selection-1"></a><a class="docs-heading-anchor-permalink" href="#Custom-Color-Scheme-Selection" title="Permalink"></a></h3><pre><code class="language-julia hljs"># Select schemes based on criteria
+function get_blue_schemes()
+    all_schemes = get_all_schemes()
+    blue_schemes = filter(x -&gt; occursin(&quot;Blue&quot;, string(x)), all_schemes)
+    return blue_schemes
+end
+
+blue_schemes = get_blue_schemes()
+plot_color_bars(blue_schemes, 
+                plot_title=&quot;All Blue Color Schemes&quot;)</code></pre><h3 id="Batch-Processing"><a class="docs-heading-anchor" href="#Batch-Processing">Batch Processing</a><a id="Batch-Processing-1"></a><a class="docs-heading-anchor-permalink" href="#Batch-Processing" title="Permalink"></a></h3><pre><code class="language-julia hljs"># Process multiple scheme categories
+categories = [sequential, diverging, qualitative]
+category_names = [&quot;Sequential&quot;, &quot;Diverging&quot;, &quot;Qualitative&quot;]
+
+for (schemes, name) in zip(categories, category_names)
+    # Plot first 8 schemes from each category
+    plot_color_bars(schemes[1:8], 
+                    schemes_per_row=4,
+                    plot_title=&quot;$name Schemes (First 8)&quot;,
+                    save_path=&quot;$(lowercase(name))_schemes.pdf&quot;)
+end</code></pre><h3 id="Interactive-Exploration"><a class="docs-heading-anchor" href="#Interactive-Exploration">Interactive Exploration</a><a id="Interactive-Exploration-1"></a><a class="docs-heading-anchor-permalink" href="#Interactive-Exploration" title="Permalink"></a></h3><pre><code class="language-julia hljs"># Interactive scheme exploration
+function explore_schemes()
+    println(&quot;Available categories:&quot;)
+    println(&quot;1. Sequential (&quot;, length(sequential), &quot; schemes)&quot;)
+    println(&quot;2. Diverging (&quot;, length(diverging), &quot; schemes)&quot;)
+    println(&quot;3. Qualitative (&quot;, length(qualitative), &quot; schemes)&quot;)
+    
+    # This is a simplified example - in practice you might use a GUI
+    println(&quot;Enter category number (1-3):&quot;)
+    # category = readline()
+    # ... handle user input
+end</code></pre><pre><code class="nohighlight hljs"></code></pre></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="api.html">« API Reference</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="auto">Automatic (OS)</option><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option><option value="catppuccin-latte">catppuccin-latte</option><option value="catppuccin-frappe">catppuccin-frappe</option><option value="catppuccin-macchiato">catppuccin-macchiato</option><option value="catppuccin-mocha">catppuccin-mocha</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 1.13.0 on <span class="colophon-date" title="Friday 27 June 2025 02:46">Friday 27 June 2025</span>. Using Julia version 1.11.5.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
