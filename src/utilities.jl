@@ -1,5 +1,4 @@
 # This file contains utility functions for the ColorVintner package
-# Currently empty, but can be used for helper functions in the future
 
 """
     get_all_schemes()

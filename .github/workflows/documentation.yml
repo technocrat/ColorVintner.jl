@@ -1,0 +1,50 @@
+name: Documentation
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: julia-actions/setup-julia@v1
+        with:
+          version: '1.11'
+      - uses: julia-actions/cache@v1
+      - run: |
+          julia --project=docs/ -e '
+            using Pkg
+            Pkg.develop(PackageSpec(path=pwd()))
+            Pkg.instantiate()
+          '
+      - run: julia --project=docs/ docs/make.jl
+      - uses: actions/upload-artifact@v4
+        with:
+          name: documentation
+          path: docs/build/
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: julia-actions/setup-julia@v1
+        with:
+          version: '1.11'
+      - uses: julia-actions/cache@v1
+      - run: |
+          julia --project=docs/ -e '
+            using Pkg
+            Pkg.develop(PackageSpec(path=pwd()))
+            Pkg.instantiate()
+          '
+      - run: julia --project=docs/ docs/make.jl
+      - uses: actions/deploy-pages@v4
+        if: success()
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          publish-dir: ./docs/build 
