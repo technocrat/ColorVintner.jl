@@ -1,7 +1,7 @@
 name = "ColorVintner"
 uuid = "b10900d7-caed-426b-ac73-6c8d6f549e92"
 authors = ["technocrat <public@careaga.net>"]
-version = "0.1.0"
+version = "1.0.1"
 
 [deps]
 CairoMakie = "13f3f980-e62b-5c42-98c6-ff1f3baf88f0"
