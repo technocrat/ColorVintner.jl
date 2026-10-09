@@ -1,0 +1,703 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>API Reference — ColorVintner.jl</title>
+  <link rel="stylesheet" href="../assets/materialdocs.css?v=837232b3">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap">
+  <meta name="title" content="API Reference — ColorVintner.jl">
+  <meta property="og:title" content="API Reference — ColorVintner.jl">
+  <meta property="twitter:title" content="API Reference — ColorVintner.jl">
+  <meta name="description" content="Documentation for ColorVintner.jl.">
+  <meta property="og:description" content="Documentation for ColorVintner.jl.">
+  <meta property="twitter:description" content="Documentation for ColorVintner.jl.">
+  <meta property="og:url" content="https://technocrat.github.io/ColorVintner.jl/api/">
+  <meta property="twitter:url" content="https://technocrat.github.io/ColorVintner.jl/api/">
+  <link rel="canonical" href="https://technocrat.github.io/ColorVintner.jl/api/">
+  <script>
+    (function(){
+      document.documentElement.classList.add('no-transition');
+      var t=localStorage.getItem('md-theme');if(t)document.documentElement.setAttribute('data-theme',t);
+      window.addEventListener('load',function(){setTimeout(function(){document.documentElement.classList.remove('no-transition');},50);});
+    })()
+  </script>
+</head>
+<body data-warn-outdated>
+  <header class="md-navbar">
+    <button id="md-hamburger" class="md-icon-btn md-hamburger" aria-label="Toggle navigation" aria-expanded="false"><svg class="md-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true" focusable="false"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg></button>
+    <span class="md-navbar-title">ColorVintner.jl</span>
+    <span class="md-navbar-spacer"></span>
+    <button id="md-search-btn" class="md-search-bar" aria-label="Search documentation" aria-expanded="false">
+      <svg class="md-icon md-search-bar-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true" focusable="false"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+      <span class="md-search-bar-label">Search docs</span>
+      <kbd class="md-search-bar-kbd">Ctrl K</kbd>
+    </button>
+    <div id="md-version" class="md-version" hidden>
+      <button id="md-version-btn" class="md-version-btn" aria-haspopup="listbox" aria-expanded="false" aria-label="Select documentation version">
+        <span id="md-version-current" class="md-version-current"></span>
+        <svg class="md-icon md-version-caret" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true" focusable="false"><path d="M7 10l5 5 5-5z"/></svg>
+      </button>
+      <ul id="md-version-menu" class="md-version-menu" role="listbox" hidden></ul>
+    </div>
+    <a class="md-icon-btn md-repo-link" href="https://github.com/technocrat/ColorVintner.jl" title="View the repository on GitHub" aria-label="View the repository on GitHub" rel="noopener" target="_blank"><svg class="md-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 .3a12 12 0 00-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 016 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.8.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1.1.9 2.2v3.3c0 .3.1.7.8.6A12 12 0 0012 .3z"/></svg><span class="md-repo-label">GitHub</span></a>
+    <button id="md-theme-toggle" class="md-icon-btn" title="Toggle dark mode" aria-label="Toggle dark mode"><svg class="md-icon md-icon-light" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58a.996.996 0 00-1.41 0 .996.996 0 000 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37a.996.996 0 00-1.41 0 .996.996 0 000 1.41l1.06 1.06c.39.39 1.03.39 1.41 0a.996.996 0 000-1.41l-1.06-1.06zm1.06-10.96a.996.996 0 000-1.41.996.996 0 00-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36a.996.996 0 000-1.41.996.996 0 00-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/></svg><svg class="md-icon md-icon-dark" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/></svg></button>
+  </header>
+  <div class="md-layout">
+    <nav class="md-sidebar">
+      <a href="../">Home</a>
+      <a href="../getting_started/">Getting Started</a>
+      <a href="../api/" class="md-nav-active">API Reference</a>
+      <a href="../examples/">Examples</a>
+    </nav>
+    <main class="md-content">
+      <article class="md-article">
+      <div class="md-article-actions"><a class="md-icon-btn md-edit-link" href="https://github.com/technocrat/ColorVintner.jl/blob/main/docs/src/api.md" title="Edit source on GitHub" aria-label="Edit source on GitHub"><svg class="md-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true" focusable="false"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a.996.996 0 000-1.41l-2.34-2.34a.996.996 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg></a></div>
+<h1 id="API-Reference" class="md-heading">API Reference<a href="#API-Reference" class="md-heading-anchor" aria-label="Link to this section">#</a></h1>
+<div class="md-docstring" id="ColorVintner.get_all_schemes-Tuple{}">
+<div class="md-docstring-header">
+<h4 class="md-docstring-binding"><code>ColorVintner.get_all_schemes</code> — <span class="md-docstring-sig">Tuple{}</span></h4>
+<a class="md-docstring-source" href="https://github.com/technocrat/ColorVintner.jl/blob/6eefc1c34af0989818a6641f569cf174459d3e1b/src/utilities.jl#L3-L15" title="View source">source</a>
+</div>
+<div class="md-docstring-content">
+<div class="md-code-block">
+<button class="md-copy-btn" title="Copy to clipboard" aria-label="Copy code"><span class="md-copy-icon">⧉</span><span class="md-copy-feedback">Copied!</span></button>
+<pre><code class="language-julia">get_all_schemes()</code></pre>
+</div>
+<p>Get all available color schemes as a combined vector.</p>
+<p><strong>Returns</strong></p>
+<ul class="md-list-tight">
+<li><p><code class="md-code-inline">Vector{Symbol}</code>: All sequential, diverging, and qualitative schemes combined</p>
+</li>
+</ul>
+<p><strong>Examples</strong></p>
+<div class="md-code-block">
+<button class="md-copy-btn" title="Copy to clipboard" aria-label="Copy code"><span class="md-copy-icon">⧉</span><span class="md-copy-feedback">Copied!</span></button>
+<pre><code class="language-julia">all_schemes = get_all_schemes()</code></pre>
+</div>
+</div>
+</div>
+<div class="md-docstring" id="ColorVintner.get_scheme_count-Tuple{}">
+<div class="md-docstring-header">
+<h4 class="md-docstring-binding"><code>ColorVintner.get_scheme_count</code> — <span class="md-docstring-sig">Tuple{}</span></h4>
+<a class="md-docstring-source" href="https://github.com/technocrat/ColorVintner.jl/blob/6eefc1c34af0989818a6641f569cf174459d3e1b/src/utilities.jl#L20-L32" title="View source">source</a>
+</div>
+<div class="md-docstring-content">
+<div class="md-code-block">
+<button class="md-copy-btn" title="Copy to clipboard" aria-label="Copy code"><span class="md-copy-icon">⧉</span><span class="md-copy-feedback">Copied!</span></button>
+<pre><code class="language-julia">get_scheme_count()</code></pre>
+</div>
+<p>Get the count of schemes in each category.</p>
+<p><strong>Returns</strong></p>
+<ul class="md-list-tight">
+<li><p><code class="md-code-inline">Dict</code>: Dictionary with counts for each category</p>
+</li>
+</ul>
+<p><strong>Examples</strong></p>
+<div class="md-code-block">
+<button class="md-copy-btn" title="Copy to clipboard" aria-label="Copy code"><span class="md-copy-icon">⧉</span><span class="md-copy-feedback">Copied!</span></button>
+<pre><code class="language-julia">counts = get_scheme_count()</code></pre>
+</div>
+</div>
+</div>
+<div class="md-docstring" id="ColorVintner.list_scheme_colors_in_rbg-Tuple{Symbol}">
+<div class="md-docstring-header">
+<h4 class="md-docstring-binding"><code>ColorVintner.list_scheme_colors_in_rbg</code> — <span class="md-docstring-sig">Tuple{Symbol}</span></h4>
+<a class="md-docstring-source" href="https://github.com/technocrat/ColorVintner.jl/blob/6eefc1c34af0989818a6641f569cf174459d3e1b/src/schemes.jl#L53-L68" title="View source">source</a>
+</div>
+<div class="md-docstring-content">
+<div class="md-code-block">
+<button class="md-copy-btn" title="Copy to clipboard" aria-label="Copy code"><span class="md-copy-icon">⧉</span><span class="md-copy-feedback">Copied!</span></button>
+<pre><code class="language-julia">list_scheme_colors_in_rbg(scheme_name::Symbol)</code></pre>
+</div>
+<p>Display information about a specific color scheme including its colors in hex format.</p>
+<p><strong>Arguments</strong></p>
+<ul class="md-list-tight">
+<li><p><code class="md-code-inline">scheme_name::Symbol</code>: The name of the color scheme to examine</p>
+</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul class="md-list-tight">
+<li><p><code class="md-code-inline">Vector{Color}</code>: The colors in the scheme, or <code class="md-code-inline">nothing</code> if the scheme is not found</p>
+</li>
+</ul>
+<p><strong>Examples</strong></p>
+<div class="md-code-block">
+<button class="md-copy-btn" title="Copy to clipboard" aria-label="Copy code"><span class="md-copy-icon">⧉</span><span class="md-copy-feedback">Copied!</span></button>
+<pre><code class="language-julia">colors = list_scheme_colors_in_rbg(:Blues_5)</code></pre>
+</div>
+</div>
+</div>
+<div class="md-docstring" id="ColorVintner.list_schemes_colors_in_hex-Tuple{}">
+<div class="md-docstring-header">
+<h4 class="md-docstring-binding"><code>ColorVintner.list_schemes_colors_in_hex</code> — <span class="md-docstring-sig">Tuple{}</span></h4>
+<a class="md-docstring-source" href="https://github.com/technocrat/ColorVintner.jl/blob/6eefc1c34af0989818a6641f569cf174459d3e1b/src/schemes.jl#L82-L98" title="View source">source</a>
+</div>
+<div class="md-docstring-content">
+<div class="md-code-block">
+<button class="md-copy-btn" title="Copy to clipboard" aria-label="Copy code"><span class="md-copy-icon">⧉</span><span class="md-copy-feedback">Copied!</span></button>
+<pre><code class="language-julia">list_schemes_colors_in_hex()</code></pre>
+</div>
+<p>Create a DataFrame containing all color schemes with their hex color representations.</p>
+<p>This function combines all sequential, diverging, and qualitative color schemes and creates a DataFrame with scheme names and their corresponding hex color strings.</p>
+<p><strong>Returns</strong></p>
+<ul class="md-list-tight">
+<li><p><code class="md-code-inline">DataFrame</code>: A DataFrame with columns <code class="md-code-inline">Scheme_Name</code> and <code class="md-code-inline">Colors</code></p>
+</li>
+</ul>
+<p><strong>Examples</strong></p>
+<div class="md-code-block">
+<button class="md-copy-btn" title="Copy to clipboard" aria-label="Copy code"><span class="md-copy-icon">⧉</span><span class="md-copy-feedback">Copied!</span></button>
+<pre><code class="language-julia">df = list_schemes_colors_in_hex()
+first(df, 5)  # Show first 5 schemes</code></pre>
+</div>
+</div>
+</div>
+<div class="md-docstring" id="ColorVintner.plot_color_bars-Tuple{Vector{Symbol}}">
+<div class="md-docstring-header">
+<h4 class="md-docstring-binding"><code>ColorVintner.plot_color_bars</code> — <span class="md-docstring-sig">Tuple{Vector{Symbol}}</span></h4>
+<a class="md-docstring-source" href="https://github.com/technocrat/ColorVintner.jl/blob/6eefc1c34af0989818a6641f569cf174459d3e1b/src/plotting.jl#L1-L35" title="View source">source</a>
+</div>
+<div class="md-docstring-content">
+<div class="md-code-block">
+<button class="md-copy-btn" title="Copy to clipboard" aria-label="Copy code"><span class="md-copy-icon">⧉</span><span class="md-copy-feedback">Copied!</span></button>
+<pre><code class="language-julia">plot_color_bars(schemes::Vector{Symbol}; 
+               schemes_per_row::Int=4,
+               bar_height::Float64=1.0,
+               figsize::Tuple{Int,Int}=(1600, 1200),
+               save_path::Union{String,Nothing}=nothing,
+               plot_title::Union{String,Nothing}=nothing)</code></pre>
+</div>
+<p>Create color bar plots for a list of color schemes using Makie.</p>
+<p>This function creates a grid of color bars, where each subplot shows the colors in a specific color scheme. The bars are sized to be approximately 1cm in height when displayed.</p>
+<p><strong>Arguments</strong></p>
+<ul class="md-list-tight">
+<li><p><code class="md-code-inline">schemes::Vector{Symbol}</code>: Vector of color scheme symbols to plot</p>
+</li>
+<li><p><code class="md-code-inline">schemes_per_row::Int=4</code>: Number of schemes to display per row</p>
+</li>
+<li><p><code class="md-code-inline">bar_height::Float64=1.0</code>: Height of each color bar (in data coordinates)</p>
+</li>
+<li><p><code class="md-code-inline">figsize::Tuple{Int,Int}=(1600, 1200)</code>: Figure size (width, height) in pixels</p>
+</li>
+<li><p><code class="md-code-inline">save_path::Union{String,Nothing}=nothing</code>: Optional path to save the plot</p>
+</li>
+<li><p><code class="md-code-inline">plot_title::Union{String,Nothing}=nothing</code>: Optional title for the entire plot</p>
+</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul class="md-list-tight">
+<li><p><code class="md-code-inline">Figure</code>: The Makie figure object</p>
+</li>
+</ul>
+<p><strong>Examples</strong></p>
+<div class="md-code-block">
+<button class="md-copy-btn" title="Copy to clipboard" aria-label="Copy code"><span class="md-copy-icon">⧉</span><span class="md-copy-feedback">Copied!</span></button>
+<pre><code class="language-julia"># Plot a few schemes
+plot_color_bars([:Blues_5, :Reds_5, :Greens_5])
+
+# Plot with custom settings
+plot_color_bars(sequential[1:8], schemes_per_row=2, 
+                save_path=&quot;my_plot.pdf&quot;, plot_title=&quot;My Color Schemes&quot;)</code></pre>
+</div>
+</div>
+</div>
+<div class="md-docstring" id="ColorVintner.plot_diverging_schemes_split-Tuple{}">
+<div class="md-docstring-header">
+<h4 class="md-docstring-binding"><code>ColorVintner.plot_diverging_schemes_split</code> — <span class="md-docstring-sig">Tuple{}</span></h4>
+<a class="md-docstring-source" href="https://github.com/technocrat/ColorVintner.jl/blob/6eefc1c34af0989818a6641f569cf174459d3e1b/src/plotting.jl#L330-L359" title="View source">source</a>
+</div>
+<div class="md-docstring-content">
+<div class="md-code-block">
+<button class="md-copy-btn" title="Copy to clipboard" aria-label="Copy code"><span class="md-copy-icon">⧉</span><span class="md-copy-feedback">Copied!</span></button>
+<pre><code class="language-julia">plot_diverging_schemes_split(;
+    schemes_per_row::Int=4,
+    bar_height::Float64=1.0,
+    figsize::Tuple{Int,Int}=(1600, 1200),
+    save_dir::Union{String,Nothing}=nothing)</code></pre>
+</div>
+<p>Create separate plots for diverging schemes split into multiple subplots for better organization.</p>
+<p>This function splits the diverging color schemes into 3 parts to create more manageable and readable plots. Each part is displayed separately and optionally saved to files.</p>
+<p><strong>Arguments</strong></p>
+<ul class="md-list-tight">
+<li><p><code class="md-code-inline">schemes_per_row::Int=4</code>: Number of schemes to display per row</p>
+</li>
+<li><p><code class="md-code-inline">bar_height::Float64=1.0</code>: Height of each color bar (in data coordinates)</p>
+</li>
+<li><p><code class="md-code-inline">figsize::Tuple{Int,Int}=(1600, 1200)</code>: Figure size (width, height) in pixels</p>
+</li>
+<li><p><code class="md-code-inline">save_dir::Union{String,Nothing}=nothing</code>: Optional directory to save plots</p>
+</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul class="md-list-tight">
+<li><p><code class="md-code-inline">Dict</code>: Dictionary containing the three diverging plot parts</p>
+</li>
+</ul>
+<p><strong>Examples</strong></p>
+<div class="md-code-block">
+<button class="md-copy-btn" title="Copy to clipboard" aria-label="Copy code"><span class="md-copy-icon">⧉</span><span class="md-copy-feedback">Copied!</span></button>
+<pre><code class="language-julia"># Create diverging scheme plots
+div_plots = plot_diverging_schemes_split()
+
+# Save to directory
+div_plots = plot_diverging_schemes_split(save_dir=&quot;./diverging_plots&quot;)</code></pre>
+</div>
+</div>
+</div>
+<div class="md-docstring" id="ColorVintner.plot_qualitative_schemes_split-Tuple{}">
+<div class="md-docstring-header">
+<h4 class="md-docstring-binding"><code>ColorVintner.plot_qualitative_schemes_split</code> — <span class="md-docstring-sig">Tuple{}</span></h4>
+<a class="md-docstring-source" href="https://github.com/technocrat/ColorVintner.jl/blob/6eefc1c34af0989818a6641f569cf174459d3e1b/src/plotting.jl#L404-L433" title="View source">source</a>
+</div>
+<div class="md-docstring-content">
+<div class="md-code-block">
+<button class="md-copy-btn" title="Copy to clipboard" aria-label="Copy code"><span class="md-copy-icon">⧉</span><span class="md-copy-feedback">Copied!</span></button>
+<pre><code class="language-julia">plot_qualitative_schemes_split(;
+    schemes_per_row::Int=4,
+    bar_height::Float64=1.0,
+    figsize::Tuple{Int,Int}=(1600, 1200),
+    save_dir::Union{String,Nothing}=nothing)</code></pre>
+</div>
+<p>Create separate plots for qualitative schemes split into multiple subplots for better organization.</p>
+<p>This function splits the qualitative color schemes into 2 parts to create more manageable and readable plots. Each part is displayed separately and optionally saved to files.</p>
+<p><strong>Arguments</strong></p>
+<ul class="md-list-tight">
+<li><p><code class="md-code-inline">schemes_per_row::Int=4</code>: Number of schemes to display per row</p>
+</li>
+<li><p><code class="md-code-inline">bar_height::Float64=1.0</code>: Height of each color bar (in data coordinates)</p>
+</li>
+<li><p><code class="md-code-inline">figsize::Tuple{Int,Int}=(1600, 1200)</code>: Figure size (width, height) in pixels</p>
+</li>
+<li><p><code class="md-code-inline">save_dir::Union{String,Nothing}=nothing</code>: Optional directory to save plots</p>
+</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul class="md-list-tight">
+<li><p><code class="md-code-inline">Dict</code>: Dictionary containing the two qualitative plot parts</p>
+</li>
+</ul>
+<p><strong>Examples</strong></p>
+<div class="md-code-block">
+<button class="md-copy-btn" title="Copy to clipboard" aria-label="Copy code"><span class="md-copy-icon">⧉</span><span class="md-copy-feedback">Copied!</span></button>
+<pre><code class="language-julia"># Create qualitative scheme plots
+qual_plots = plot_qualitative_schemes_split()
+
+# Save to directory
+qual_plots = plot_qualitative_schemes_split(save_dir=&quot;./qualitative_plots&quot;)</code></pre>
+</div>
+</div>
+</div>
+<div class="md-docstring" id="ColorVintner.plot_schemes_by_category-Tuple{}">
+<div class="md-docstring-header">
+<h4 class="md-docstring-binding"><code>ColorVintner.plot_schemes_by_category</code> — <span class="md-docstring-sig">Tuple{}</span></h4>
+<a class="md-docstring-source" href="https://github.com/technocrat/ColorVintner.jl/blob/6eefc1c34af0989818a6641f569cf174459d3e1b/src/plotting.jl#L172-L202" title="View source">source</a>
+</div>
+<div class="md-docstring-content">
+<div class="md-code-block">
+<button class="md-copy-btn" title="Copy to clipboard" aria-label="Copy code"><span class="md-copy-icon">⧉</span><span class="md-copy-feedback">Copied!</span></button>
+<pre><code class="language-julia">plot_schemes_by_category(;
+    schemes_per_row::Int=4,
+    bar_height::Float64=1.0,
+    figsize::Tuple{Int,Int}=(1600, 1200),
+    save_dir::Union{String,Nothing}=nothing)</code></pre>
+</div>
+<p>Create separate plots for sequential, diverging, and qualitative schemes using Makie.</p>
+<p>This function creates comprehensive plots for all three categories of color schemes, splitting them into manageable parts for better visualization. It displays plots on screen by default and optionally saves them to a directory.</p>
+<p><strong>Arguments</strong></p>
+<ul class="md-list-tight">
+<li><p><code class="md-code-inline">schemes_per_row::Int=4</code>: Number of schemes to display per row</p>
+</li>
+<li><p><code class="md-code-inline">bar_height::Float64=1.0</code>: Height of each color bar (in data coordinates)</p>
+</li>
+<li><p><code class="md-code-inline">figsize::Tuple{Int,Int}=(1600, 1200)</code>: Figure size (width, height) in pixels</p>
+</li>
+<li><p><code class="md-code-inline">save_dir::Union{String,Nothing}=nothing</code>: Optional directory to save plots</p>
+</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul class="md-list-tight">
+<li><p><code class="md-code-inline">Dict</code>: Dictionary containing all created plot objects</p>
+</li>
+</ul>
+<p><strong>Examples</strong></p>
+<div class="md-code-block">
+<button class="md-copy-btn" title="Copy to clipboard" aria-label="Copy code"><span class="md-copy-icon">⧉</span><span class="md-copy-feedback">Copied!</span></button>
+<pre><code class="language-julia"># Create all category plots
+plots = plot_schemes_by_category()
+
+# Save to a directory
+plots = plot_schemes_by_category(save_dir=&quot;./color_plots&quot;)</code></pre>
+</div>
+</div>
+</div>
+<div class="md-docstring" id="ColorVintner.plot_sequential_schemes_split-Tuple{}">
+<div class="md-docstring-header">
+<h4 class="md-docstring-binding"><code>ColorVintner.plot_sequential_schemes_split</code> — <span class="md-docstring-sig">Tuple{}</span></h4>
+<a class="md-docstring-source" href="https://github.com/technocrat/ColorVintner.jl/blob/6eefc1c34af0989818a6641f569cf174459d3e1b/src/plotting.jl#L247-L276" title="View source">source</a>
+</div>
+<div class="md-docstring-content">
+<div class="md-code-block">
+<button class="md-copy-btn" title="Copy to clipboard" aria-label="Copy code"><span class="md-copy-icon">⧉</span><span class="md-copy-feedback">Copied!</span></button>
+<pre><code class="language-julia">plot_sequential_schemes_split(;
+    schemes_per_row::Int=4,
+    bar_height::Float64=1.0,
+    figsize::Tuple{Int,Int}=(1600, 1200),
+    save_dir::Union{String,Nothing}=nothing)</code></pre>
+</div>
+<p>Create separate plots for sequential schemes split into multiple subplots for better organization.</p>
+<p>This function splits the sequential color schemes into 4 parts to create more manageable and readable plots. Each part is displayed separately and optionally saved to files.</p>
+<p><strong>Arguments</strong></p>
+<ul class="md-list-tight">
+<li><p><code class="md-code-inline">schemes_per_row::Int=4</code>: Number of schemes to display per row</p>
+</li>
+<li><p><code class="md-code-inline">bar_height::Float64=1.0</code>: Height of each color bar (in data coordinates)</p>
+</li>
+<li><p><code class="md-code-inline">figsize::Tuple{Int,Int}=(1600, 1200)</code>: Figure size (width, height) in pixels</p>
+</li>
+<li><p><code class="md-code-inline">save_dir::Union{String,Nothing}=nothing</code>: Optional directory to save plots</p>
+</li>
+</ul>
+<p><strong>Returns</strong></p>
+<ul class="md-list-tight">
+<li><p><code class="md-code-inline">Dict</code>: Dictionary containing the four sequential plot parts</p>
+</li>
+</ul>
+<p><strong>Examples</strong></p>
+<div class="md-code-block">
+<button class="md-copy-btn" title="Copy to clipboard" aria-label="Copy code"><span class="md-copy-icon">⧉</span><span class="md-copy-feedback">Copied!</span></button>
+<pre><code class="language-julia"># Create sequential scheme plots
+seq_plots = plot_sequential_schemes_split()
+
+# Save to directory
+seq_plots = plot_sequential_schemes_split(save_dir=&quot;./sequential_plots&quot;)</code></pre>
+</div>
+</div>
+</div>
+<div class="md-docstring" id="ColorVintner.show_all_scheme_names-Tuple{}">
+<div class="md-docstring-header">
+<h4 class="md-docstring-binding"><code>ColorVintner.show_all_scheme_names</code> — <span class="md-docstring-sig">Tuple{}</span></h4>
+<a class="md-docstring-source" href="https://github.com/technocrat/ColorVintner.jl/blob/6eefc1c34af0989818a6641f569cf174459d3e1b/src/exploration.jl#L1-L13" title="View source">source</a>
+</div>
+<div class="md-docstring-content">
+<div class="md-code-block">
+<button class="md-copy-btn" title="Copy to clipboard" aria-label="Copy code"><span class="md-copy-icon">⧉</span><span class="md-copy-feedback">Copied!</span></button>
+<pre><code class="language-julia">show_all_scheme_names()</code></pre>
+</div>
+<p>Print all available color scheme names to the console.</p>
+<p>This function iterates through all color schemes (sequential, diverging, and qualitative) and prints their names. Useful for browsing available schemes or debugging.</p>
+<p><strong>Examples</strong></p>
+<div class="md-code-block">
+<button class="md-copy-btn" title="Copy to clipboard" aria-label="Copy code"><span class="md-copy-icon">⧉</span><span class="md-copy-feedback">Copied!</span></button>
+<pre><code class="language-julia">show_all_scheme_names()</code></pre>
+</div>
+</div>
+</div>
+<div class="md-docstring" id="ColorVintner.show_diverging_distribution-Tuple{}">
+<div class="md-docstring-header">
+<h4 class="md-docstring-binding"><code>ColorVintner.show_diverging_distribution</code> — <span class="md-docstring-sig">Tuple{}</span></h4>
+<a class="md-docstring-source" href="https://github.com/technocrat/ColorVintner.jl/blob/6eefc1c34af0989818a6641f569cf174459d3e1b/src/exploration.jl#L59-L75" title="View source">source</a>
+</div>
+<div class="md-docstring-content">
+<div class="md-code-block">
+<button class="md-copy-btn" title="Copy to clipboard" aria-label="Copy code"><span class="md-copy-icon">⧉</span><span class="md-copy-feedback">Copied!</span></button>
+<pre><code class="language-julia">show_diverging_distribution()</code></pre>
+</div>
+<p>Show how diverging schemes are distributed across the 3 parts.</p>
+<p>This function displays information about how the diverging color schemes are distributed across the three parts created by <code class="md-code-inline">plot_diverging_schemes_split()</code>. It prints summary information and returns a dictionary with the scheme groupings.</p>
+<p><strong>Returns</strong></p>
+<ul class="md-list-tight">
+<li><p><code class="md-code-inline">Dict</code>: Dictionary containing the three parts of diverging schemes</p>
+</li>
+</ul>
+<p><strong>Examples</strong></p>
+<div class="md-code-block">
+<button class="md-copy-btn" title="Copy to clipboard" aria-label="Copy code"><span class="md-copy-icon">⧉</span><span class="md-copy-feedback">Copied!</span></button>
+<pre><code class="language-julia">distribution = show_diverging_distribution()</code></pre>
+</div>
+</div>
+</div>
+<div class="md-docstring" id="ColorVintner.show_qualitative_distribution-Tuple{}">
+<div class="md-docstring-header">
+<h4 class="md-docstring-binding"><code>ColorVintner.show_qualitative_distribution</code> — <span class="md-docstring-sig">Tuple{}</span></h4>
+<a class="md-docstring-source" href="https://github.com/technocrat/ColorVintner.jl/blob/6eefc1c34af0989818a6641f569cf174459d3e1b/src/exploration.jl#L96-L112" title="View source">source</a>
+</div>
+<div class="md-docstring-content">
+<div class="md-code-block">
+<button class="md-copy-btn" title="Copy to clipboard" aria-label="Copy code"><span class="md-copy-icon">⧉</span><span class="md-copy-feedback">Copied!</span></button>
+<pre><code class="language-julia">show_qualitative_distribution()</code></pre>
+</div>
+<p>Show how qualitative schemes are distributed across the 2 parts.</p>
+<p>This function displays information about how the qualitative color schemes are distributed across the two parts created by <code class="md-code-inline">plot_qualitative_schemes_split()</code>. It prints summary information and returns a dictionary with the scheme groupings.</p>
+<p><strong>Returns</strong></p>
+<ul class="md-list-tight">
+<li><p><code class="md-code-inline">Dict</code>: Dictionary containing the two parts of qualitative schemes</p>
+</li>
+</ul>
+<p><strong>Examples</strong></p>
+<div class="md-code-block">
+<button class="md-copy-btn" title="Copy to clipboard" aria-label="Copy code"><span class="md-copy-icon">⧉</span><span class="md-copy-feedback">Copied!</span></button>
+<pre><code class="language-julia">distribution = show_qualitative_distribution()</code></pre>
+</div>
+</div>
+</div>
+<div class="md-docstring" id="ColorVintner.show_sequential_distribution-Tuple{}">
+<div class="md-docstring-header">
+<h4 class="md-docstring-binding"><code>ColorVintner.show_sequential_distribution</code> — <span class="md-docstring-sig">Tuple{}</span></h4>
+<a class="md-docstring-source" href="https://github.com/technocrat/ColorVintner.jl/blob/6eefc1c34af0989818a6641f569cf174459d3e1b/src/exploration.jl#L20-L36" title="View source">source</a>
+</div>
+<div class="md-docstring-content">
+<div class="md-code-block">
+<button class="md-copy-btn" title="Copy to clipboard" aria-label="Copy code"><span class="md-copy-icon">⧉</span><span class="md-copy-feedback">Copied!</span></button>
+<pre><code class="language-julia">show_sequential_distribution()</code></pre>
+</div>
+<p>Show how sequential schemes are distributed across the 4 parts.</p>
+<p>This function displays information about how the sequential color schemes are distributed across the four parts created by <code class="md-code-inline">plot_sequential_schemes_split()</code>. It prints summary information and returns a dictionary with the scheme groupings.</p>
+<p><strong>Returns</strong></p>
+<ul class="md-list-tight">
+<li><p><code class="md-code-inline">Dict</code>: Dictionary containing the four parts of sequential schemes</p>
+</li>
+</ul>
+<p><strong>Examples</strong></p>
+<div class="md-code-block">
+<button class="md-copy-btn" title="Copy to clipboard" aria-label="Copy code"><span class="md-copy-icon">⧉</span><span class="md-copy-feedback">Copied!</span></button>
+<pre><code class="language-julia">distribution = show_sequential_distribution()</code></pre>
+</div>
+</div>
+</div>
+<h2 id="Exploration-Functions" class="md-heading">Exploration Functions<a href="#Exploration-Functions" class="md-heading-anchor" aria-label="Link to this section">#</a></h2>
+<h3 id="show_all_scheme_names()" class="md-heading"><code class="md-code-inline">show_all_scheme_names()</code><a href="#show_all_scheme_names()" class="md-heading-anchor" aria-label="Link to this section">#</a></h3>
+<p>Print all available color scheme names to the console.</p>
+<div class="md-code-block">
+<button class="md-copy-btn" title="Copy to clipboard" aria-label="Copy code"><span class="md-copy-icon">⧉</span><span class="md-copy-feedback">Copied!</span></button>
+<pre><code class="language-julia">show_all_scheme_names()</code></pre>
+</div>
+<h3 id="list_scheme_colors_in_rbg(scheme_name::Symbol)" class="md-heading"><code class="md-code-inline">list_scheme_colors_in_rbg(scheme_name::Symbol)</code><a href="#list_scheme_colors_in_rbg(scheme_name::Symbol)" class="md-heading-anchor" aria-label="Link to this section">#</a></h3>
+<p>Display information about a specific color scheme including its colors in hex format.</p>
+<p><strong>Arguments:</strong></p>
+<ul class="md-list-tight">
+<li><p><code class="md-code-inline">scheme_name::Symbol</code>: The name of the color scheme to examine</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul class="md-list-tight">
+<li><p><code class="md-code-inline">Vector{Color}</code>: The colors in the scheme, or <code class="md-code-inline">nothing</code> if the scheme is not found</p>
+</li>
+</ul>
+<p><strong>Example:</strong></p>
+<div class="md-code-block">
+<button class="md-copy-btn" title="Copy to clipboard" aria-label="Copy code"><span class="md-copy-icon">⧉</span><span class="md-copy-feedback">Copied!</span></button>
+<pre><code class="language-julia">colors = list_scheme_colors_in_rbg(:Blues_5)</code></pre>
+</div>
+<h3 id="list_schemes_colors_in_hex()" class="md-heading"><code class="md-code-inline">list_schemes_colors_in_hex()</code><a href="#list_schemes_colors_in_hex()" class="md-heading-anchor" aria-label="Link to this section">#</a></h3>
+<p>Create a DataFrame containing all color schemes with their hex color representations.</p>
+<p><strong>Returns:</strong></p>
+<ul class="md-list-tight">
+<li><p><code class="md-code-inline">DataFrame</code>: A DataFrame with columns <code class="md-code-inline">Scheme_Name</code> and <code class="md-code-inline">Colors</code></p>
+</li>
+</ul>
+<p><strong>Example:</strong></p>
+<div class="md-code-block">
+<button class="md-copy-btn" title="Copy to clipboard" aria-label="Copy code"><span class="md-copy-icon">⧉</span><span class="md-copy-feedback">Copied!</span></button>
+<pre><code class="language-julia">df = list_schemes_colors_in_hex()
+first(df, 5)  # Show first 5 schemes</code></pre>
+</div>
+<h2 id="Plotting-Functions" class="md-heading">Plotting Functions<a href="#Plotting-Functions" class="md-heading-anchor" aria-label="Link to this section">#</a></h2>
+<h3 id="plot_color_bars(schemes::Vector{Symbol};-...)" class="md-heading"><code class="md-code-inline">plot_color_bars(schemes::Vector{Symbol}; ...)</code><a href="#plot_color_bars(schemes::Vector{Symbol};-...)" class="md-heading-anchor" aria-label="Link to this section">#</a></h3>
+<p>Create color bar plots for a list of color schemes using Makie.</p>
+<p><strong>Arguments:</strong></p>
+<ul class="md-list-tight">
+<li><p><code class="md-code-inline">schemes::Vector{Symbol}</code>: Vector of color scheme symbols to plot</p>
+</li>
+<li><p><code class="md-code-inline">schemes_per_row::Int=4</code>: Number of schemes to display per row</p>
+</li>
+<li><p><code class="md-code-inline">bar_height::Float64=1.0</code>: Height of each color bar (in data coordinates)</p>
+</li>
+<li><p><code class="md-code-inline">figsize::Tuple{Int,Int}=(1600, 1200)</code>: Figure size (width, height) in pixels</p>
+</li>
+<li><p><code class="md-code-inline">save_path::Union{String,Nothing}=nothing</code>: Optional path to save the plot</p>
+</li>
+<li><p><code class="md-code-inline">plot_title::Union{String,Nothing}=nothing</code>: Optional title for the entire plot</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul class="md-list-tight">
+<li><p><code class="md-code-inline">Figure</code>: The Makie figure object</p>
+</li>
+</ul>
+<p><strong>Example:</strong></p>
+<div class="md-code-block">
+<button class="md-copy-btn" title="Copy to clipboard" aria-label="Copy code"><span class="md-copy-icon">⧉</span><span class="md-copy-feedback">Copied!</span></button>
+<pre><code class="language-julia"># Plot a few schemes
+plot_color_bars([:Blues_5, :Reds_5, :Greens_5])
+
+# Plot with custom settings
+plot_color_bars(sequential[1:8], schemes_per_row=2, 
+                save_path=&quot;my_plot.pdf&quot;, plot_title=&quot;My Color Schemes&quot;)</code></pre>
+</div>
+<h3 id="plot_schemes_by_category(;-...)" class="md-heading"><code class="md-code-inline">plot_schemes_by_category(; ...)</code><a href="#plot_schemes_by_category(;-...)" class="md-heading-anchor" aria-label="Link to this section">#</a></h3>
+<p>Create separate plots for sequential, diverging, and qualitative schemes using Makie.</p>
+<p><strong>Arguments:</strong></p>
+<ul class="md-list-tight">
+<li><p><code class="md-code-inline">schemes_per_row::Int=4</code>: Number of schemes to display per row</p>
+</li>
+<li><p><code class="md-code-inline">bar_height::Float64=1.0</code>: Height of each color bar (in data coordinates)</p>
+</li>
+<li><p><code class="md-code-inline">figsize::Tuple{Int,Int}=(1600, 1200)</code>: Figure size (width, height) in pixels</p>
+</li>
+<li><p><code class="md-code-inline">save_dir::Union{String,Nothing}=nothing</code>: Optional directory to save plots</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul class="md-list-tight">
+<li><p><code class="md-code-inline">Dict</code>: Dictionary containing all created plot objects</p>
+</li>
+</ul>
+<p><strong>Example:</strong></p>
+<div class="md-code-block">
+<button class="md-copy-btn" title="Copy to clipboard" aria-label="Copy code"><span class="md-copy-icon">⧉</span><span class="md-copy-feedback">Copied!</span></button>
+<pre><code class="language-julia"># Create all category plots
+plots = plot_schemes_by_category()
+
+# Save to a directory
+plots = plot_schemes_by_category(save_dir=&quot;./color_plots&quot;)</code></pre>
+</div>
+<h3 id="plot_sequential_schemes_split(;-...)" class="md-heading"><code class="md-code-inline">plot_sequential_schemes_split(; ...)</code><a href="#plot_sequential_schemes_split(;-...)" class="md-heading-anchor" aria-label="Link to this section">#</a></h3>
+<p>Create separate plots for sequential schemes split into multiple subplots for better organization.</p>
+<p><strong>Arguments:</strong></p>
+<ul class="md-list-tight">
+<li><p><code class="md-code-inline">schemes_per_row::Int=4</code>: Number of schemes to display per row</p>
+</li>
+<li><p><code class="md-code-inline">bar_height::Float64=1.0</code>: Height of each color bar (in data coordinates)</p>
+</li>
+<li><p><code class="md-code-inline">figsize::Tuple{Int,Int}=(1600, 1200)</code>: Figure size (width, height) in pixels</p>
+</li>
+<li><p><code class="md-code-inline">save_dir::Union{String,Nothing}=nothing</code>: Optional directory to save plots</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul class="md-list-tight">
+<li><p><code class="md-code-inline">Dict</code>: Dictionary containing the four sequential plot parts</p>
+</li>
+</ul>
+<h3 id="plot_diverging_schemes_split(;-...)" class="md-heading"><code class="md-code-inline">plot_diverging_schemes_split(; ...)</code><a href="#plot_diverging_schemes_split(;-...)" class="md-heading-anchor" aria-label="Link to this section">#</a></h3>
+<p>Create separate plots for diverging schemes split into multiple subplots for better organization.</p>
+<p><strong>Arguments:</strong></p>
+<ul class="md-list-tight">
+<li><p><code class="md-code-inline">schemes_per_row::Int=4</code>: Number of schemes to display per row</p>
+</li>
+<li><p><code class="md-code-inline">bar_height::Float64=1.0</code>: Height of each color bar (in data coordinates)</p>
+</li>
+<li><p><code class="md-code-inline">figsize::Tuple{Int,Int}=(1600, 1200)</code>: Figure size (width, height) in pixels</p>
+</li>
+<li><p><code class="md-code-inline">save_dir::Union{String,Nothing}=nothing</code>: Optional directory to save plots</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul class="md-list-tight">
+<li><p><code class="md-code-inline">Dict</code>: Dictionary containing the three diverging plot parts</p>
+</li>
+</ul>
+<h3 id="plot_qualitative_schemes_split(;-...)" class="md-heading"><code class="md-code-inline">plot_qualitative_schemes_split(; ...)</code><a href="#plot_qualitative_schemes_split(;-...)" class="md-heading-anchor" aria-label="Link to this section">#</a></h3>
+<p>Create separate plots for qualitative schemes split into multiple subplots for better organization.</p>
+<p><strong>Arguments:</strong></p>
+<ul class="md-list-tight">
+<li><p><code class="md-code-inline">schemes_per_row::Int=4</code>: Number of schemes to display per row</p>
+</li>
+<li><p><code class="md-code-inline">bar_height::Float64=1.0</code>: Height of each color bar (in data coordinates)</p>
+</li>
+<li><p><code class="md-code-inline">figsize::Tuple{Int,Int}=(1600, 1200)</code>: Figure size (width, height) in pixels</p>
+</li>
+<li><p><code class="md-code-inline">save_dir::Union{String,Nothing}=nothing</code>: Optional directory to save plots</p>
+</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<ul class="md-list-tight">
+<li><p><code class="md-code-inline">Dict</code>: Dictionary containing the two qualitative plot parts</p>
+</li>
+</ul>
+<h2 id="Distribution-Functions" class="md-heading">Distribution Functions<a href="#Distribution-Functions" class="md-heading-anchor" aria-label="Link to this section">#</a></h2>
+<h3 id="show_sequential_distribution()" class="md-heading"><code class="md-code-inline">show_sequential_distribution()</code><a href="#show_sequential_distribution()" class="md-heading-anchor" aria-label="Link to this section">#</a></h3>
+<p>Show how sequential schemes are distributed across the 4 parts.</p>
+<p><strong>Returns:</strong></p>
+<ul class="md-list-tight">
+<li><p><code class="md-code-inline">Dict</code>: Dictionary containing the four parts of sequential schemes</p>
+</li>
+</ul>
+<h3 id="show_diverging_distribution()" class="md-heading"><code class="md-code-inline">show_diverging_distribution()</code><a href="#show_diverging_distribution()" class="md-heading-anchor" aria-label="Link to this section">#</a></h3>
+<p>Show how diverging schemes are distributed across the 3 parts.</p>
+<p><strong>Returns:</strong></p>
+<ul class="md-list-tight">
+<li><p><code class="md-code-inline">Dict</code>: Dictionary containing the three parts of diverging schemes</p>
+</li>
+</ul>
+<h3 id="show_qualitative_distribution()" class="md-heading"><code class="md-code-inline">show_qualitative_distribution()</code><a href="#show_qualitative_distribution()" class="md-heading-anchor" aria-label="Link to this section">#</a></h3>
+<p>Show how qualitative schemes are distributed across the 2 parts.</p>
+<p><strong>Returns:</strong></p>
+<ul class="md-list-tight">
+<li><p><code class="md-code-inline">Dict</code>: Dictionary containing the two parts of qualitative schemes</p>
+</li>
+</ul>
+<h2 id="Utility-Functions" class="md-heading">Utility Functions<a href="#Utility-Functions" class="md-heading-anchor" aria-label="Link to this section">#</a></h2>
+<h3 id="get_all_schemes()" class="md-heading"><code class="md-code-inline">get_all_schemes()</code><a href="#get_all_schemes()" class="md-heading-anchor" aria-label="Link to this section">#</a></h3>
+<p>Get all available color schemes as a combined vector.</p>
+<p><strong>Returns:</strong></p>
+<ul class="md-list-tight">
+<li><p><code class="md-code-inline">Vector{Symbol}</code>: All sequential, diverging, and qualitative schemes combined</p>
+</li>
+</ul>
+<h3 id="get_scheme_count()" class="md-heading"><code class="md-code-inline">get_scheme_count()</code><a href="#get_scheme_count()" class="md-heading-anchor" aria-label="Link to this section">#</a></h3>
+<p>Get the count of schemes in each category.</p>
+<p><strong>Returns:</strong></p>
+<ul class="md-list-tight">
+<li><p><code class="md-code-inline">Dict</code>: Dictionary with counts for each category</p>
+</li>
+</ul>
+<h2 id="Constants" class="md-heading">Constants<a href="#Constants" class="md-heading-anchor" aria-label="Link to this section">#</a></h2>
+<h3 id="sequential" class="md-heading"><code class="md-code-inline">sequential</code><a href="#sequential" class="md-heading-anchor" aria-label="Link to this section">#</a></h3>
+<p>Vector of all sequential color scheme symbols.</p>
+<h3 id="diverging" class="md-heading"><code class="md-code-inline">diverging</code><a href="#diverging" class="md-heading-anchor" aria-label="Link to this section">#</a></h3>
+<p>Vector of all diverging color scheme symbols.</p>
+<h3 id="qualitative" class="md-heading"><code class="md-code-inline">qualitative</code><a href="#qualitative" class="md-heading-anchor" aria-label="Link to this section">#</a></h3>
+<p>Vector of all qualitative color scheme symbols. </p>
+      </article>
+      <footer class="md-footer">
+<p>Built with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and <a href="https://github.com/mthelm85/MaterialDocs.jl">MaterialDocs.jl</a>.</p>
+      </footer>
+    </main>
+    <aside class="md-toc">
+      <div class="md-toc-inner">
+        <p class="md-toc-title">On this page</p>
+          <a class="md-toc-link md-toc-h2" href="#Exploration-Functions">Exploration Functions</a>
+            <a class="md-toc-link md-toc-h3" href="#show_all_scheme_names()">show_all_scheme_names()</a>
+            <a class="md-toc-link md-toc-h3" href="#list_scheme_colors_in_rbg(scheme_name::Symbol)">list_scheme_colors_in_rbg(scheme_name::Symbol)</a>
+            <a class="md-toc-link md-toc-h3" href="#list_schemes_colors_in_hex()">list_schemes_colors_in_hex()</a>
+          <a class="md-toc-link md-toc-h2" href="#Plotting-Functions">Plotting Functions</a>
+            <a class="md-toc-link md-toc-h3" href="#plot_color_bars(schemes::Vector{Symbol};-...)">plot_color_bars(schemes::Vector{Symbol}; ...)</a>
+            <a class="md-toc-link md-toc-h3" href="#plot_schemes_by_category(;-...)">plot_schemes_by_category(; ...)</a>
+            <a class="md-toc-link md-toc-h3" href="#plot_sequential_schemes_split(;-...)">plot_sequential_schemes_split(; ...)</a>
+            <a class="md-toc-link md-toc-h3" href="#plot_diverging_schemes_split(;-...)">plot_diverging_schemes_split(; ...)</a>
+            <a class="md-toc-link md-toc-h3" href="#plot_qualitative_schemes_split(;-...)">plot_qualitative_schemes_split(; ...)</a>
+          <a class="md-toc-link md-toc-h2" href="#Distribution-Functions">Distribution Functions</a>
+            <a class="md-toc-link md-toc-h3" href="#show_sequential_distribution()">show_sequential_distribution()</a>
+            <a class="md-toc-link md-toc-h3" href="#show_diverging_distribution()">show_diverging_distribution()</a>
+            <a class="md-toc-link md-toc-h3" href="#show_qualitative_distribution()">show_qualitative_distribution()</a>
+          <a class="md-toc-link md-toc-h2" href="#Utility-Functions">Utility Functions</a>
+            <a class="md-toc-link md-toc-h3" href="#get_all_schemes()">get_all_schemes()</a>
+            <a class="md-toc-link md-toc-h3" href="#get_scheme_count()">get_scheme_count()</a>
+          <a class="md-toc-link md-toc-h2" href="#Constants">Constants</a>
+            <a class="md-toc-link md-toc-h3" href="#sequential">sequential</a>
+            <a class="md-toc-link md-toc-h3" href="#diverging">diverging</a>
+            <a class="md-toc-link md-toc-h3" href="#qualitative">qualitative</a>
+      </div>
+    </aside>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/julia.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/julia-repl.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script src="../siteinfo.js"></script>
+  <script src="../../versions.js"></script>
+  <script src="../assets/materialdocs.js?v=837232b3"></script>
+</body>
+</html>
