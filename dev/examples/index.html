@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Examples — ColorVintner.jl</title>
+  <link rel="stylesheet" href="../assets/materialdocs.css?v=af6b8e1b">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap">
+  <meta name="title" content="Examples — ColorVintner.jl">
+  <meta property="og:title" content="Examples — ColorVintner.jl">
+  <meta property="twitter:title" content="Examples — ColorVintner.jl">
+  <meta name="description" content="Documentation for ColorVintner.jl.">
+  <meta property="og:description" content="Documentation for ColorVintner.jl.">
+  <meta property="twitter:description" content="Documentation for ColorVintner.jl.">
+  <meta property="og:url" content="https://technocrat.github.io/ColorVintner.jl/examples/">
+  <meta property="twitter:url" content="https://technocrat.github.io/ColorVintner.jl/examples/">
+  <link rel="canonical" href="https://technocrat.github.io/ColorVintner.jl/examples/">
+  <script>
+    (function(){
+      document.documentElement.classList.add('no-transition');
+      var t=localStorage.getItem('md-theme');if(t)document.documentElement.setAttribute('data-theme',t);
+      window.addEventListener('load',function(){setTimeout(function(){document.documentElement.classList.remove('no-transition');},50);});
+    })()
+  </script>
+</head>
+<body data-warn-outdated>
+  <header class="md-navbar">
+    <button id="md-hamburger" class="md-icon-btn md-hamburger" aria-label="Toggle navigation" aria-expanded="false"><svg class="md-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true" focusable="false"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg></button>
+    <span class="md-navbar-title">ColorVintner.jl</span>
+    <span class="md-navbar-spacer"></span>
+    <button id="md-search-btn" class="md-search-bar" aria-label="Search documentation" aria-expanded="false">
+      <svg class="md-icon md-search-bar-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true" focusable="false"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+      <span class="md-search-bar-label">Search docs</span>
+      <kbd class="md-search-bar-kbd">Ctrl K</kbd>
+    </button>
+    <div id="md-version" class="md-version" hidden>
+      <button id="md-version-btn" class="md-version-btn" aria-haspopup="listbox" aria-expanded="false" aria-label="Select documentation version">
+        <span id="md-version-current" class="md-version-current"></span>
+        <svg class="md-icon md-version-caret" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true" focusable="false"><path d="M7 10l5 5 5-5z"/></svg>
+      </button>
+      <ul id="md-version-menu" class="md-version-menu" role="listbox" hidden></ul>
+    </div>
+    <a class="md-icon-btn md-repo-link" href="https://github.com/technocrat/ColorVintner.jl" title="View the repository on GitHub" aria-label="View the repository on GitHub" rel="noopener" target="_blank"><svg class="md-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 .3a12 12 0 00-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 016 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.8.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1.1.9 2.2v3.3c0 .3.1.7.8.6A12 12 0 0012 .3z"/></svg><span class="md-repo-label">GitHub</span></a>
+    <button id="md-theme-toggle" class="md-icon-btn" title="Toggle dark mode" aria-label="Toggle dark mode"><svg class="md-icon md-icon-light" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58a.996.996 0 00-1.41 0 .996.996 0 000 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37a.996.996 0 00-1.41 0 .996.996 0 000 1.41l1.06 1.06c.39.39 1.03.39 1.41 0a.996.996 0 000-1.41l-1.06-1.06zm1.06-10.96a.996.996 0 000-1.41.996.996 0 00-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36a.996.996 0 000-1.41.996.996 0 00-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/></svg><svg class="md-icon md-icon-dark" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/></svg></button>
+  </header>
+  <div class="md-layout">
+    <nav class="md-sidebar">
+      <a href="../">Home</a>
+      <a href="../getting_started/">Getting Started</a>
+      <a href="../api/">API Reference</a>
+      <a href="../examples/" class="md-nav-active">Examples</a>
+    </nav>
+    <main class="md-content">
+      <article class="md-article">
+      <div class="md-article-actions"><a class="md-icon-btn md-edit-link" href="https://github.com/technocrat/ColorVintner.jl/blob/main/docs/src/examples.md" title="Edit source on GitHub" aria-label="Edit source on GitHub"><svg class="md-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true" focusable="false"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a.996.996 0 000-1.41l-2.34-2.34a.996.996 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg></a></div>
+<h1 id="Examples" class="md-heading">Examples<a href="#Examples" class="md-heading-anchor" aria-label="Link to this section">#</a></h1>
+<p>This page provides practical examples of how to use ColorVintner.</p>
+<h2 id="Basic-Exploration" class="md-heading">Basic Exploration<a href="#Basic-Exploration" class="md-heading-anchor" aria-label="Link to this section">#</a></h2>
+<h3 id="List-All-Available-Schemes" class="md-heading">List All Available Schemes<a href="#List-All-Available-Schemes" class="md-heading-anchor" aria-label="Link to this section">#</a></h3>
+<div class="md-code-block">
+<button class="md-copy-btn" title="Copy to clipboard" aria-label="Copy code"><span class="md-copy-icon">⧉</span><span class="md-copy-feedback">Copied!</span></button>
+<pre><code class="language-julia">using ColorVintner
+
+# Print all scheme names to console
+show_all_scheme_names()</code></pre>
+</div>
+<h3 id="Examine-a-Specific-Scheme" class="md-heading">Examine a Specific Scheme<a href="#Examine-a-Specific-Scheme" class="md-heading-anchor" aria-label="Link to this section">#</a></h3>
+<div class="md-code-block">
+<button class="md-copy-btn" title="Copy to clipboard" aria-label="Copy code"><span class="md-copy-icon">⧉</span><span class="md-copy-feedback">Copied!</span></button>
+<pre><code class="language-julia"># Get detailed information about Blues_5
+colors = list_scheme_colors_in_rbg(:Blues_5)</code></pre>
+</div>
+<p>Output:</p>
+<div class="md-code-block">
+<button class="md-copy-btn" title="Copy to clipboard" aria-label="Copy code"><span class="md-copy-icon">⧉</span><span class="md-copy-feedback">Copied!</span></button>
+<pre><code>Scheme: Blues_5
+Number of colors: 5
+Colors: [&quot;#EFF3FF&quot;, &quot;#C6DBEF&quot;, &quot;#9ECAE1&quot;, &quot;#6BAED6&quot;, &quot;#3182BD&quot;]</code></pre>
+</div>
+<h3 id="Get-All-Schemes-as-DataFrame" class="md-heading">Get All Schemes as DataFrame<a href="#Get-All-Schemes-as-DataFrame" class="md-heading-anchor" aria-label="Link to this section">#</a></h3>
+<div class="md-code-block">
+<button class="md-copy-btn" title="Copy to clipboard" aria-label="Copy code"><span class="md-copy-icon">⧉</span><span class="md-copy-feedback">Copied!</span></button>
+<pre><code class="language-julia"># Create DataFrame with all schemes
+df = list_schemes_colors_in_hex()
+
+# Show first few rows
+first(df, 5)</code></pre>
+</div>
+<h2 id="Basic-Plotting" class="md-heading">Basic Plotting<a href="#Basic-Plotting" class="md-heading-anchor" aria-label="Link to this section">#</a></h2>
+<h3 id="Simple-Color-Bar-Plot" class="md-heading">Simple Color Bar Plot<a href="#Simple-Color-Bar-Plot" class="md-heading-anchor" aria-label="Link to this section">#</a></h3>
+<div class="md-code-block">
+<button class="md-copy-btn" title="Copy to clipboard" aria-label="Copy code"><span class="md-copy-icon">⧉</span><span class="md-copy-feedback">Copied!</span></button>
+<pre><code class="language-julia"># Plot a few schemes
+plot_color_bars([:Blues_5, :Reds_5, :Greens_5])</code></pre>
+</div>
+<h3 id="Custom-Plot-Layout" class="md-heading">Custom Plot Layout<a href="#Custom-Plot-Layout" class="md-heading-anchor" aria-label="Link to this section">#</a></h3>
+<div class="md-code-block">
+<button class="md-copy-btn" title="Copy to clipboard" aria-label="Copy code"><span class="md-copy-icon">⧉</span><span class="md-copy-feedback">Copied!</span></button>
+<pre><code class="language-julia"># Plot with custom settings
+plot_color_bars([:Blues_5, :Reds_5, :Greens_5, :Oranges_5], 
+                schemes_per_row=2,
+                figsize=(1200, 800),
+                plot_title=&quot;My Favorite Schemes&quot;)</code></pre>
+</div>
+<h3 id="Save-Plot-to-File" class="md-heading">Save Plot to File<a href="#Save-Plot-to-File" class="md-heading-anchor" aria-label="Link to this section">#</a></h3>
+<div class="md-code-block">
+<button class="md-copy-btn" title="Copy to clipboard" aria-label="Copy code"><span class="md-copy-icon">⧉</span><span class="md-copy-feedback">Copied!</span></button>
+<pre><code class="language-julia"># Save plot as PDF
+plot_color_bars([:Blues_5, :Reds_5, :Greens_5], 
+                save_path=&quot;my_color_schemes.pdf&quot;,
+                plot_title=&quot;Saved Color Schemes&quot;)</code></pre>
+</div>
+<h2 id="Comprehensive-Visualization" class="md-heading">Comprehensive Visualization<a href="#Comprehensive-Visualization" class="md-heading-anchor" aria-label="Link to this section">#</a></h2>
+<h3 id="All-Categories-at-Once" class="md-heading">All Categories at Once<a href="#All-Categories-at-Once" class="md-heading-anchor" aria-label="Link to this section">#</a></h3>
+<div class="md-code-block">
+<button class="md-copy-btn" title="Copy to clipboard" aria-label="Copy code"><span class="md-copy-icon">⧉</span><span class="md-copy-feedback">Copied!</span></button>
+<pre><code class="language-julia"># Create plots for all categories
+plots = plot_schemes_by_category()
+
+# This creates:
+# - 4 sequential scheme plots (parts 1-4)
+# - 3 diverging scheme plots (parts 1-3)  
+# - 2 qualitative scheme plots (parts 1-2)</code></pre>
+</div>
+<h3 id="Save-All-Plots-to-Directory" class="md-heading">Save All Plots to Directory<a href="#Save-All-Plots-to-Directory" class="md-heading-anchor" aria-label="Link to this section">#</a></h3>
+<div class="md-code-block">
+<button class="md-copy-btn" title="Copy to clipboard" aria-label="Copy code"><span class="md-copy-icon">⧉</span><span class="md-copy-feedback">Copied!</span></button>
+<pre><code class="language-julia"># Create directory and save all plots
+plots = plot_schemes_by_category(save_dir=&quot;./color_plots&quot;)</code></pre>
+</div>
+<h3 id="Individual-Category-Plots" class="md-heading">Individual Category Plots<a href="#Individual-Category-Plots" class="md-heading-anchor" aria-label="Link to this section">#</a></h3>
+<div class="md-code-block">
+<button class="md-copy-btn" title="Copy to clipboard" aria-label="Copy code"><span class="md-copy-icon">⧉</span><span class="md-copy-feedback">Copied!</span></button>
+<pre><code class="language-julia"># Just sequential schemes
+seq_plots = plot_sequential_schemes_split()
+
+# Just diverging schemes  
+div_plots = plot_diverging_schemes_split()
+
+# Just qualitative schemes
+qual_plots = plot_qualitative_schemes_split()</code></pre>
+</div>
+<h2 id="Working-with-Scheme-Categories" class="md-heading">Working with Scheme Categories<a href="#Working-with-Scheme-Categories" class="md-heading-anchor" aria-label="Link to this section">#</a></h2>
+<h3 id="Sequential-Schemes" class="md-heading">Sequential Schemes<a href="#Sequential-Schemes" class="md-heading-anchor" aria-label="Link to this section">#</a></h3>
+<div class="md-code-block">
+<button class="md-copy-btn" title="Copy to clipboard" aria-label="Copy code"><span class="md-copy-icon">⧉</span><span class="md-copy-feedback">Copied!</span></button>
+<pre><code class="language-julia"># Plot first 8 sequential schemes
+plot_color_bars(sequential[1:8], 
+                schemes_per_row=4,
+                plot_title=&quot;Sequential Schemes (First 8)&quot;)
+
+# Plot all Blues variants
+blues_schemes = filter(x -&gt; startswith(string(x), &quot;Blues&quot;), sequential)
+plot_color_bars(blues_schemes, 
+                plot_title=&quot;All Blues Schemes&quot;)</code></pre>
+</div>
+<h3 id="Diverging-Schemes" class="md-heading">Diverging Schemes<a href="#Diverging-Schemes" class="md-heading-anchor" aria-label="Link to this section">#</a></h3>
+<div class="md-code-block">
+<button class="md-copy-btn" title="Copy to clipboard" aria-label="Copy code"><span class="md-copy-icon">⧉</span><span class="md-copy-feedback">Copied!</span></button>
+<pre><code class="language-julia"># Plot first 6 diverging schemes
+plot_color_bars(diverging[1:6], 
+                schemes_per_row=3,
+                plot_title=&quot;Diverging Schemes (First 6)&quot;)
+
+# Plot all RdBu variants
+rdbu_schemes = filter(x -&gt; startswith(string(x), &quot;RdBu&quot;), diverging)
+plot_color_bars(rdbu_schemes, 
+                plot_title=&quot;All RdBu Schemes&quot;)</code></pre>
+</div>
+<h3 id="Qualitative-Schemes" class="md-heading">Qualitative Schemes<a href="#Qualitative-Schemes" class="md-heading-anchor" aria-label="Link to this section">#</a></h3>
+<div class="md-code-block">
+<button class="md-copy-btn" title="Copy to clipboard" aria-label="Copy code"><span class="md-copy-icon">⧉</span><span class="md-copy-feedback">Copied!</span></button>
+<pre><code class="language-julia"># Plot first 8 qualitative schemes
+plot_color_bars(qualitative[1:8], 
+                schemes_per_row=4,
+                plot_title=&quot;Qualitative Schemes (First 8)&quot;)
+
+# Plot all Set1 variants
+set1_schemes = filter(x -&gt; startswith(string(x), &quot;Set1&quot;), qualitative)
+plot_color_bars(set1_schemes, 
+                plot_title=&quot;All Set1 Schemes&quot;)</code></pre>
+</div>
+<h2 id="Utility-Examples" class="md-heading">Utility Examples<a href="#Utility-Examples" class="md-heading-anchor" aria-label="Link to this section">#</a></h2>
+<h3 id="Get-Scheme-Statistics" class="md-heading">Get Scheme Statistics<a href="#Get-Scheme-Statistics" class="md-heading-anchor" aria-label="Link to this section">#</a></h3>
+<div class="md-code-block">
+<button class="md-copy-btn" title="Copy to clipboard" aria-label="Copy code"><span class="md-copy-icon">⧉</span><span class="md-copy-feedback">Copied!</span></button>
+<pre><code class="language-julia"># Get counts for each category
+counts = get_scheme_count()
+println(&quot;Total schemes: &quot;, counts[:total])
+println(&quot;Sequential: &quot;, counts[:sequential])
+println(&quot;Diverging: &quot;, counts[:diverging])
+println(&quot;Qualitative: &quot;, counts[:qualitative])</code></pre>
+</div>
+<h3 id="Combine-All-Schemes" class="md-heading">Combine All Schemes<a href="#Combine-All-Schemes" class="md-heading-anchor" aria-label="Link to this section">#</a></h3>
+<div class="md-code-block">
+<button class="md-copy-btn" title="Copy to clipboard" aria-label="Copy code"><span class="md-copy-icon">⧉</span><span class="md-copy-feedback">Copied!</span></button>
+<pre><code class="language-julia"># Get all schemes in one vector
+all_schemes = get_all_schemes()
+println(&quot;Total schemes available: &quot;, length(all_schemes))
+
+# Plot a random selection
+using Random
+Random.seed!(42)  # For reproducible results
+random_schemes = rand(all_schemes, 12)
+plot_color_bars(random_schemes, 
+                schemes_per_row=4,
+                plot_title=&quot;Random Color Schemes&quot;)</code></pre>
+</div>
+<h3 id="Distribution-Information" class="md-heading">Distribution Information<a href="#Distribution-Information" class="md-heading-anchor" aria-label="Link to this section">#</a></h3>
+<div class="md-code-block">
+<button class="md-copy-btn" title="Copy to clipboard" aria-label="Copy code"><span class="md-copy-icon">⧉</span><span class="md-copy-feedback">Copied!</span></button>
+<pre><code class="language-julia"># See how schemes are distributed across plot parts
+show_sequential_distribution()
+show_diverging_distribution()
+show_qualitative_distribution()</code></pre>
+</div>
+<h2 id="Advanced-Examples" class="md-heading">Advanced Examples<a href="#Advanced-Examples" class="md-heading-anchor" aria-label="Link to this section">#</a></h2>
+<h3 id="Custom-Color-Scheme-Selection" class="md-heading">Custom Color Scheme Selection<a href="#Custom-Color-Scheme-Selection" class="md-heading-anchor" aria-label="Link to this section">#</a></h3>
+<div class="md-code-block">
+<button class="md-copy-btn" title="Copy to clipboard" aria-label="Copy code"><span class="md-copy-icon">⧉</span><span class="md-copy-feedback">Copied!</span></button>
+<pre><code class="language-julia"># Select schemes based on criteria
+function get_blue_schemes()
+    all_schemes = get_all_schemes()
+    blue_schemes = filter(x -&gt; occursin(&quot;Blue&quot;, string(x)), all_schemes)
+    return blue_schemes
+end
+
+blue_schemes = get_blue_schemes()
+plot_color_bars(blue_schemes, 
+                plot_title=&quot;All Blue Color Schemes&quot;)</code></pre>
+</div>
+<h3 id="Batch-Processing" class="md-heading">Batch Processing<a href="#Batch-Processing" class="md-heading-anchor" aria-label="Link to this section">#</a></h3>
+<div class="md-code-block">
+<button class="md-copy-btn" title="Copy to clipboard" aria-label="Copy code"><span class="md-copy-icon">⧉</span><span class="md-copy-feedback">Copied!</span></button>
+<pre><code class="language-julia"># Process multiple scheme categories
+categories = [sequential, diverging, qualitative]
+category_names = [&quot;Sequential&quot;, &quot;Diverging&quot;, &quot;Qualitative&quot;]
+
+for (schemes, name) in zip(categories, category_names)
+    # Plot first 8 schemes from each category
+    plot_color_bars(schemes[1:8], 
+                    schemes_per_row=4,
+                    plot_title=&quot;$name Schemes (First 8)&quot;,
+                    save_path=&quot;$(lowercase(name))_schemes.pdf&quot;)
+end</code></pre>
+</div>
+<h3 id="Interactive-Exploration" class="md-heading">Interactive Exploration<a href="#Interactive-Exploration" class="md-heading-anchor" aria-label="Link to this section">#</a></h3>
+<div class="md-code-block">
+<button class="md-copy-btn" title="Copy to clipboard" aria-label="Copy code"><span class="md-copy-icon">⧉</span><span class="md-copy-feedback">Copied!</span></button>
+<pre><code class="language-julia"># Interactive scheme exploration
+function explore_schemes()
+    println(&quot;Available categories:&quot;)
+    println(&quot;1. Sequential (&quot;, length(sequential), &quot; schemes)&quot;)
+    println(&quot;2. Diverging (&quot;, length(diverging), &quot; schemes)&quot;)
+    println(&quot;3. Qualitative (&quot;, length(qualitative), &quot; schemes)&quot;)
+    
+    # This is a simplified example - in practice you might use a GUI
+    println(&quot;Enter category number (1-3):&quot;)
+    # category = readline()
+    # ... handle user input
+end</code></pre>
+</div>
+<div class="md-code-block">
+<button class="md-copy-btn" title="Copy to clipboard" aria-label="Copy code"><span class="md-copy-icon">⧉</span><span class="md-copy-feedback">Copied!</span></button>
+<pre><code></code></pre>
+</div>
+      </article>
+      <footer class="md-footer">
+<p>Built with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and <a href="https://github.com/mthelm85/MaterialDocs.jl">MaterialDocs.jl</a>.</p>
+      </footer>
+    </main>
+    <aside class="md-toc">
+      <div class="md-toc-inner">
+        <p class="md-toc-title">On this page</p>
+          <a class="md-toc-link md-toc-h2" href="#Basic-Exploration">Basic Exploration</a>
+            <a class="md-toc-link md-toc-h3" href="#List-All-Available-Schemes">List All Available Schemes</a>
+            <a class="md-toc-link md-toc-h3" href="#Examine-a-Specific-Scheme">Examine a Specific Scheme</a>
+            <a class="md-toc-link md-toc-h3" href="#Get-All-Schemes-as-DataFrame">Get All Schemes as DataFrame</a>
+          <a class="md-toc-link md-toc-h2" href="#Basic-Plotting">Basic Plotting</a>
+            <a class="md-toc-link md-toc-h3" href="#Simple-Color-Bar-Plot">Simple Color Bar Plot</a>
+            <a class="md-toc-link md-toc-h3" href="#Custom-Plot-Layout">Custom Plot Layout</a>
+            <a class="md-toc-link md-toc-h3" href="#Save-Plot-to-File">Save Plot to File</a>
+          <a class="md-toc-link md-toc-h2" href="#Comprehensive-Visualization">Comprehensive Visualization</a>
+            <a class="md-toc-link md-toc-h3" href="#All-Categories-at-Once">All Categories at Once</a>
+            <a class="md-toc-link md-toc-h3" href="#Save-All-Plots-to-Directory">Save All Plots to Directory</a>
+            <a class="md-toc-link md-toc-h3" href="#Individual-Category-Plots">Individual Category Plots</a>
+          <a class="md-toc-link md-toc-h2" href="#Working-with-Scheme-Categories">Working with Scheme Categories</a>
+            <a class="md-toc-link md-toc-h3" href="#Sequential-Schemes">Sequential Schemes</a>
+            <a class="md-toc-link md-toc-h3" href="#Diverging-Schemes">Diverging Schemes</a>
+            <a class="md-toc-link md-toc-h3" href="#Qualitative-Schemes">Qualitative Schemes</a>
+          <a class="md-toc-link md-toc-h2" href="#Utility-Examples">Utility Examples</a>
+            <a class="md-toc-link md-toc-h3" href="#Get-Scheme-Statistics">Get Scheme Statistics</a>
+            <a class="md-toc-link md-toc-h3" href="#Combine-All-Schemes">Combine All Schemes</a>
+            <a class="md-toc-link md-toc-h3" href="#Distribution-Information">Distribution Information</a>
+          <a class="md-toc-link md-toc-h2" href="#Advanced-Examples">Advanced Examples</a>
+            <a class="md-toc-link md-toc-h3" href="#Custom-Color-Scheme-Selection">Custom Color Scheme Selection</a>
+            <a class="md-toc-link md-toc-h3" href="#Batch-Processing">Batch Processing</a>
+            <a class="md-toc-link md-toc-h3" href="#Interactive-Exploration">Interactive Exploration</a>
+      </div>
+    </aside>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/julia.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/julia-repl.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script src="../siteinfo.js"></script>
+  <script src="../../versions.js"></script>
+  <script src="../assets/materialdocs.js?v=af6b8e1b"></script>
+</body>
+</html>
